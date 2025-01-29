@@ -31,6 +31,7 @@
 		"patterns:escape": "node ./theme-utils.mjs escape-patterns",
 		"validate:theme": "node ./theme-utils.mjs validate-theme",
 		"prepare": "husky"
+		"build": "sass src/scss/style.scss dist/css/style.css --style compressed && webpack --config webpack.config.js
 	},
 	"devDependencies": {
 		"@octokit/rest": "^21.0.2",
@@ -54,6 +55,9 @@
 		"semver": "^7.6.3",
 		"string-progressbar": "^1.0.4",
 		"table": "^6.8.2"
+		"sass": "^1.62.0",
+		"webpack": "^5.76.0",
+		"webpack-cli": "^5.0.1"
 	},
 	"stylelint": {
 		"extends": "@wordpress/stylelint-config",
