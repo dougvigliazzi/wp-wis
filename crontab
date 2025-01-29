@@ -1,0 +1,9 @@
+Add a cron job to run the backup script regularly:
+
+- Open the crontab editor:
+
+    crontab -e`
+
+- Add a line to schedule daily backups at 2 AM:
+
+    0 2 * * * /opt/scripts/mysql-backup.sh
