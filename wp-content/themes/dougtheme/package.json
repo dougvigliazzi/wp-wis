@@ -10,7 +10,7 @@
 		"local:clean": "git reset --hard HEAD; git clean -fd",
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
 		"batch:build": "./theme-batch-utils.sh build-all",
-		"build": "sass /dougtheme/style.scss /dougtheme/style.css --style compressed && webpack --config webpack.config.js",
+		"build": "sass style.scss style.css --style compressed && webpack --config webpack.config.js",
 		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
 		"batch:update": "./theme-batch-utils.sh update-dependencies",
 		"deploy:version-bump": "node ./theme-utils.mjs version-bump-themes",
