@@ -1,0 +1,74 @@
+{
+	"name": "themes",
+	"version": "1.0.5717",
+	"description": "Automattic public themes",
+	"author": "automattic",
+	"license": "GPL-2.0",
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"sandbox:clean": "node ./theme-utils.mjs clean-sandbox",
+		"local:clean": "git reset --hard HEAD; git clean -fd",
+		"batch:install": "./theme-batch-utils.sh install-dependencies",
+		"batch:build": "./theme-batch-utils.sh build-all",
+		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
+		"batch:update": "./theme-batch-utils.sh update-dependencies",
+		"deploy:version-bump": "node ./theme-utils.mjs version-bump-themes",
+		"deploy:version-bump-from-last-bump": "node ./theme-utils.mjs version-bump-from-last-bump",
+		"deploy:push:all": "node ./theme-utils.mjs push-to-sandbox",
+		"deploy:push:changes": "node ./theme-utils.mjs push-changes-to-sandbox",
+		"deploy:push:theme": "node ./theme-utils.mjs push-theme-to-sandbox",
+		"deploy": "node ./theme-utils.mjs push-button-deploy",
+		"deploy:core:sync": "node ./theme-utils.mjs deploy-sync-core-theme",
+		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
+		"deploy:theme": "node ./theme-utils.mjs deploy-theme",
+		"deploy:zip": "node ./theme-utils.mjs build-com-zip",
+		"deploy:land": "node ./theme-utils.mjs land-diff",
+		"deploy:add-strict-typing": "node ./theme-utils.mjs add-strict-typing",
+		"pull:all": "node ./theme-utils.mjs pull-all-themes",
+		"core:pull": "node ./theme-utils.mjs pull-core-themes",
+		"core:push": "node ./theme-utils.mjs push-core-themes",
+		"core:sync": "node ./theme-utils.mjs sync-core-theme",
+		"patterns:escape": "node ./theme-utils.mjs escape-patterns",
+		"validate:theme": "node ./theme-utils.mjs validate-theme",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@octokit/rest": "^21.0.2",
+		"@wordpress/prettier-config": "^4.6.0",
+		"@wordpress/scripts": "^27.9.0",
+		"@wordpress/stylelint-config": "^22.6.0",
+		"ajv": "^8.17.1",
+		"ajv-draft-04": "^1.0.0",
+		"chalk": "^5.3.0",
+		"chokidar-cli": "^3.0.0",
+		"fast-glob": "^3.3.2",
+		"fs-extra": "^11.2.0",
+		"husky": "^9.1.5",
+		"inquirer": "^10.1.8",
+		"lint-staged": "^15.2.9",
+		"lodash": "^4.17.21",
+		"octokit": "^4.0.2",
+		"open": "^10.1.0",
+		"parse5-html-rewriting-stream": "^7.0.0",
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"semver": "^7.6.3",
+		"string-progressbar": "^1.0.4",
+		"table": "^6.8.2"
+	},
+	"stylelint": {
+		"extends": "@wordpress/stylelint-config",
+		"defaultSeverity": "warning"
+	},
+	"lint-staged": {
+		"*.scss": [
+			"wp-scripts lint-style --fix --custom-syntax postcss-scss"
+		]
+	},
+	"engines": {
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
+	},
+	"workspaces": [
+		"*"
+	]
+}
