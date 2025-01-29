@@ -20,12 +20,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd wp-content/themes/your-theme
+          cd wp-content/themes/dougtheme
           npm install
 
       - name: Build theme assets
         run: |
-          cd wp-content/themes/your-theme
+          cd wp-content/themes/dougtheme
           npm run build
 
       - name: Deploy to cloud server
