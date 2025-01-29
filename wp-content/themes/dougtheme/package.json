@@ -31,7 +31,7 @@
 		"patterns:escape": "node ./theme-utils.mjs escape-patterns",
 		"validate:theme": "node ./theme-utils.mjs validate-theme",
 		"prepare": "husky"
-		"build": "sass src/scss/style.scss dist/css/style.css --style compressed && webpack --config webpack.config.js
+		"build": "sass src/scss/style.scss dist/css/style.css --style compressed && webpack --config webpack.config.js"
 	},
 	"devDependencies": {
 		"@octokit/rest": "^21.0.2",
