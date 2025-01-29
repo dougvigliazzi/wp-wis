@@ -10,6 +10,7 @@
 		"local:clean": "git reset --hard HEAD; git clean -fd",
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
 		"batch:build": "./theme-batch-utils.sh build-all",
+		"build": "sass src/scss/style.scss dist/css/style.css --style compressed && webpack --config webpack.config.js",
 		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
 		"batch:update": "./theme-batch-utils.sh update-dependencies",
 		"deploy:version-bump": "node ./theme-utils.mjs version-bump-themes",
@@ -31,7 +32,6 @@
 		"patterns:escape": "node ./theme-utils.mjs escape-patterns",
 		"validate:theme": "node ./theme-utils.mjs validate-theme",
 		"prepare": "husky"
-		"build": "sass src/scss/style.scss dist/css/style.css --style compressed && webpack --config webpack.config.js"
 	},
 	"devDependencies": {
 		"@octokit/rest": "^21.0.2",
