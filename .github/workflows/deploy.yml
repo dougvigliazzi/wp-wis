@@ -41,9 +41,19 @@ jobs:
           ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
 
       - name: Test SSH Key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_DIR: ${{ secrets.SERVER_DIR }}      
         run: |
           ssh -v $SERVER_USER@$SERVER_IP "echo SSH connection successful"
           
       - name: Deploy to cloud server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_DIR: ${{ secrets.SERVER_DIR }}
         run: |          
           rsync -avz --exclude='.git' --exclude='node_modules' ./ $SERVER_USER@$SERVER_IP:$SERVER_DIR
