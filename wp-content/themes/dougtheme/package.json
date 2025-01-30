@@ -26,7 +26,6 @@
     "caniuse-lite": "^1.0.30001452",
     "cssnano": "^5.1.14",
     "cssnano-preset-advanced": "^5.3.9",
-    "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
