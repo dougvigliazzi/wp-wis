@@ -4,8 +4,12 @@
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "scripts": {
-    "build": "sass style.scss style.css --style compressed && webpack --config webpack.config.js"
-  },  
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "lint:css": "stylelint '**/*.scss' --fix",
+    "lint:js": "eslint '**/*.js' --fix",
+    "start": "gulp"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
