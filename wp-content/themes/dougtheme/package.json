@@ -27,6 +27,7 @@
     "cssnano": "^5.1.14",
     "cssnano-preset-advanced": "^5.3.9",
     "gulp": "^4.0.2",
+    "gulp-eslint-new": "^1.7.2",
     "gulp-exec": "^5.0.0",
     "gulp-notify": "^4.0.0",
     "gulp-phpcs": "^3.1.0",
