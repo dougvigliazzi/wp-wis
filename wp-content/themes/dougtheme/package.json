@@ -6,6 +6,8 @@
   "scripts": {
     "build": "gulp prodstyles && gulp js",
     "watch": "gulp watch",
+    "lint:css": "gulp lintstyles",
+    "lint:php": "gulp phpcs",
     "start": "gulp devstyles"
   },
   "devDependencies": {
@@ -26,11 +28,6 @@
     "caniuse-lite": "^1.0.30001452",
     "cssnano": "^5.1.14",
     "cssnano-preset-advanced": "^5.3.9",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "gulp": "^4.0.2",
     "gulp-eslint-new": "^1.7.2",
     "gulp-exec": "^5.0.0",
