@@ -28,7 +28,7 @@ jobs:
           cd wp-content/themes/dougtheme
           npm run build
 
-      - name: Deploy to cloud server
+      - name: Setup SSH Key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
@@ -38,4 +38,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+
+      - name: Test SSH Key
+        run: |
+          ssh -v $SERVER_USER@$SERVER_IP "echo SSH connection successful"
+          
+      - name: Deploy to cloud server
+        run: |          
           rsync -avz --exclude='.git' --exclude='node_modules' ./ $SERVER_USER@$SERVER_IP:$SERVER_DIR
