@@ -6,7 +6,6 @@
   "scripts": {
     "build": "gulp prodstyles && gulp js",
     "watch": "gulp watch",
-    "lint:php": "gulp phpcs",
     "start": "gulp devstyles"
   },
   "devDependencies": {
