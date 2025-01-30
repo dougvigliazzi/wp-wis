@@ -1,4 +1,4 @@
-# wp-wis 
+# wp-wis
 ## WordPress: Nginx Configuration Best Practices 
 
 ### General Best Practices
