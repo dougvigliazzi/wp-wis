@@ -61,13 +61,13 @@ server {
 
 Create a configuration file in /etc/nginx/sites-available/:
 
-`sudo nano /etc/nginx/sites-available/example.com`
+`sudo nano /etc/nginx/sites-available/douglas.com`
 
 Paste the server block configuration.
 
 Create a symbolic link to sites-enabled:
 
-`sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/`
+`sudo ln -s /etc/nginx/sites-available/douglas.com /etc/nginx/sites-enabled/`
 
 Test the configuration and reload Nginx:
 
