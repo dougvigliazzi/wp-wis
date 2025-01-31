@@ -56,4 +56,4 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_DIR: ${{ secrets.SERVER_DIR }}
         run: |          
-          rsync -avz --ignore-errors --delete --exclude='.git' --exclude='node_modules' ./wp-content/themes/dougtheme/ $SERVER_USER@$SERVER_IP:$SERVER_DIR -vv
+          rsync -avz --ignore-errors --delete --exclude='.git' --exclude='node_modules' ./wp-content/themes/dougtheme/ $SERVER_USER@$SERVER_IP:$SERVER_DIR 
