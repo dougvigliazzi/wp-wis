@@ -14,7 +14,7 @@
 
 Server blocks in Nginx allow you to host multiple websites on the same server. Each block represents a virtual host.
 
-Configuration for WordPress
+Configuration for new WordPress
 ```
 server {
     listen 80;
